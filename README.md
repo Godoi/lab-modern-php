@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/godoi/lab-modern-php/actions/workflows/ci.yml/badge.svg)](https://github.com/godoi/lab-modern-php/actions)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](build/coverage/)
-[![codecov](https://codecov.io/github/godoi/lab-modern-php/graph/badge.svg?token=9LE4A4DL4J)](https://codecov.io/github/godoi/lab-modern-php)
+[![codecov](https://codecov.io/github/godoi/lab-modern-php/branch/main/graph/badge.svg?token=9LE4A4DL4J)](https://codecov.io/github/godoi/lab-modern-php)
 
 Ambiente de desenvolvimento local **totalmente isolado** para aplicações PHP modernas, otimizado para **WSL2 + Docker Desktop**.
 
