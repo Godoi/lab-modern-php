@@ -1,7 +1,8 @@
 {
-    "name": "decskill/lab-modern-php",
+    "name": "godoi/lab-modern-php",
     "description": "Ambiente de desenvolvimento PHP moderno com Docker",
     "type": "project",
+    "license": "MIT",
     "require-dev": {
         "phpunit/phpunit": "^10.5"
     },
