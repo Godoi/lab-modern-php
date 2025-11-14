@@ -40,6 +40,8 @@ Após rodar os testes, o relatório é gerado em `build/coverage/`:
 ./bin/test --coverage-html build/coverage
 
 ## 🚀 Início Rápido
+
+**Clonar** 
 git clone https://github.com/godoi/lab-modern-php.git  
 cd lab-modern-php
 
@@ -53,7 +55,7 @@ docker-compose ps
 **Acesse sua aplicação:**  
 🔗 http://localhost:8080
 
-**✅ Saída esperada no navegador:**  
+**Saída esperada no navegador:**  
 ✅ PHP 8.2.29  
 ✅ Xdebug 3.3.0  
 ✅ pdo_mysql  
