@@ -45,12 +45,12 @@ docker-compose ps
 **Acesse sua aplicação:**
 🔗 http://localhost:8080
 
-**✅ Saída esperada no navegador:**
-✅ PHP 8.2.29
-✅ Xdebug 3.3.0
-✅ pdo_mysql
-✅ MySQL: 8.0.39
-🧮 2 + 3 = 5
+**✅ Saída esperada no navegador:**  
+✅ PHP 8.2.29  
+✅ Xdebug 3.3.0  
+✅ pdo_mysql  
+✅ MySQL: 8.0.39  
+🧮 2 + 3 = 5  
 
 ## 🧪 Rodar testes e cobertura
 **Instale dependências (se ainda não fez)**
@@ -67,4 +67,3 @@ docker-compose run --rm cli ./vendor/bin/phpunit --testdox
 **Abra no navegador (WSL2)**
 explorer.exe build/coverage/index.html
 
-[![CI](https://github.com/godoi/lab-modern-php/actions/workflows/ci.yml/badge.svg)](https://github.com/godoi/lab-modern-php/actions)
