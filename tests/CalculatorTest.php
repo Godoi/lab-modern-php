@@ -2,37 +2,41 @@
 
 use PHPUnit\Framework\TestCase;
 use App\Calculator;
+use InvalidArgumentException;
 
 class CalculatorTest extends TestCase
 {
+    private Calculator $calc;
+
+    protected function setUp(): void
+    {
+        $this->calc = new Calculator();
+    }
+
     public function testAdd(): void
     {
-        $calc = new Calculator();
-        $this->assertSame(5, $calc->add(2, 3));
-        $this->assertSame(-1, $calc->add(-3, 2));
-        $this->assertSame(0.0, $calc->add(0.1, -0.1), '', 0.0001);
+        $this->assertEquals(5.0, $this->calc->add(2, 3), '2 + 3 should be 5.0');
+        $this->assertEquals(-1.0, $this->calc->add(-3, 2), '-3 + 2 should be -1.0');
+        $this->assertEquals(0.0, $this->calc->add(0.1, -0.1), '0.1 + (-0.1) should be ~0.0', 0.0001);
     }
 
     public function testSubtract(): void
     {
-        $calc = new Calculator();
-        $this->assertSame(2, $calc->subtract(5, 3));
-        $this->assertSame(-5, $calc->subtract(-2, 3));
+        $this->assertEquals(2.0, $this->calc->subtract(5, 3), '5 - 3 should be 2.0');
+        $this->assertEquals(-5.0, $this->calc->subtract(-2, 3), '-2 - 3 should be -5.0');
     }
 
     public function testMultiply(): void
     {
-        $calc = new Calculator();
-        $this->assertSame(6, $calc->multiply(2, 3));
-        $this->assertSame(-6, $calc->multiply(-2, 3));
-        $this->assertSame(0, $calc->multiply(0, 99));
+        $this->assertEquals(6.0, $this->calc->multiply(2, 3), '2 * 3 should be 6.0');
+        $this->assertEquals(-6.0, $this->calc->multiply(-2, 3), '-2 * 3 should be -6.0');
+        $this->assertEquals(0.0, $this->calc->multiply(0, 99), '0 * 99 should be 0.0');
     }
 
     public function testDivide(): void
     {
-        $calc = new Calculator();
-        $this->assertSame(2.0, $calc->divide(6, 3));
-        $this->assertSame(-2.5, $calc->divide(5, -2));
+        $this->assertEquals(2.0, $this->calc->divide(6, 3), '6 / 3 should be 2.0');
+        $this->assertEquals(-2.5, $this->calc->divide(5, -2), '5 / -2 should be -2.5');
     }
 
     public function testDivideByZeroThrowsException(): void
@@ -40,8 +44,7 @@ class CalculatorTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Division by zero');
 
-        $calc = new Calculator();
-        $calc->divide(1, 0);
+        $this->calc->divide(1, 0);
     }
 
     /**
@@ -49,26 +52,24 @@ class CalculatorTest extends TestCase
      */
     public function testPower(int $base, int $exp, int $expected): void
     {
-        $calc = new Calculator();
-        $this->assertSame($expected, $calc->power($base, $exp));
+        $this->assertSame($expected, $this->calc->power($base, $exp), "$base^$exp should be $expected");
     }
 
     public static function powerDataProvider(): array
     {
         return [
-            [2, 3, 8],
-            [5, 0, 1],
-            [10, 1, 10],
-            [-2, 3, -8],
+            '2^3'       => [2, 3, 8],
+            '5^0'       => [5, 0, 1],
+            '10^1'      => [10, 1, 10],
+            '(-2)^3'    => [-2, 3, -8],
         ];
     }
 
     public function testFactorial(): void
     {
-        $calc = new Calculator();
-        $this->assertSame(1, $calc->factorial(0));
-        $this->assertSame(1, $calc->factorial(1));
-        $this->assertSame(120, $calc->factorial(5));
+        $this->assertSame(1, $this->calc->factorial(0), '0! should be 1');
+        $this->assertSame(1, $this->calc->factorial(1), '1! should be 1');
+        $this->assertSame(120, $this->calc->factorial(5), '5! should be 120');
     }
 
     public function testFactorialNegativeThrowsException(): void
@@ -76,7 +77,6 @@ class CalculatorTest extends TestCase
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Non-negative integer required');
 
-        $calc = new Calculator();
-        $calc->factorial(-1);
+        $this->calc->factorial(-1);
     }
 }
