@@ -5,6 +5,10 @@
 [![codecov](https://codecov.io/github/godoi/lab-modern-php/branch/main/graph/badge.svg?token=9LE4A4DL4J)](https://codecov.io/github/godoi/lab-modern-php)
 [![PHP 8.2](https://img.shields.io/badge/PHP-8.2-777BB4?logo=php&logoColor=white)](https://www.php.net)
 [![Xdebug 3.3](https://img.shields.io/badge/Xdebug-3.3-8C34C2?logo=xdebug)](https://xdebug.org)
+[![Nginx](https://img.shields.io/badge/Nginx-1.25+-5EAF4A?logo=nginx&logoColor=white)](https://nginx.org)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?logo=mysql&logoColor=white)](https://dev.mysql.com/doc/refman/8.0/en/)
+[![PHPUnit](https://img.shields.io/badge/PHPUnit-10.5-ED4040?logo=phpunit&logoColor=white)](https://phpunit.de)
+[![Composer](https://img.shields.io/badge/Composer-2.7+-8C5A8D?logo=composer&logoColor=white)](https://getcomposer.org)
 
 Ambiente de desenvolvimento local **totalmente isolado** para aplicações PHP modernas, otimizado para **WSL2 + Docker Desktop**.
 
