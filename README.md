@@ -67,4 +67,3 @@ docker-compose run --rm cli ./vendor/bin/phpunit --testdox
 **Abra no navegador (WSL2)**
 explorer.exe build/coverage/index.html
 
-[![CI](https://github.com/godoi/lab-modern-php/actions/workflows/ci.yml/badge.svg)](https://github.com/godoi/lab-modern-php/actions)
