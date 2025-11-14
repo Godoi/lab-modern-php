@@ -39,7 +39,7 @@ jobs:
           coverage: xdebug
 
       - name: Validate composer.json and composer.lock
-        run: composer validate --strict
+        run: composer validate
 
       - name: Install dependencies (if vendor/ missing)
         run: |

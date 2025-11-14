@@ -1,9 +1,10 @@
 <?php
-require_once __DIR__ . '/Calculator.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
 
 header('Content-Type: text/plain; charset=utf-8');
 
-$calc = new Calculator();
+$calc = new \App\Calculator();
 
 echo "✅ PHP " . PHP_VERSION . "\n";
 echo extension_loaded('xdebug') ? "✅ Xdebug " . phpversion('xdebug') . "\n" : "❌ Xdebug\n";
