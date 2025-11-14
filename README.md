@@ -46,11 +46,11 @@ docker-compose ps
 🔗 http://localhost:8080
 
 **✅ Saída esperada no navegador:**
-✅ PHP 8.2.29
-✅ Xdebug 3.3.0
-✅ pdo_mysql
-✅ MySQL: 8.0.39
-🧮 2 + 3 = 5
+✅ PHP 8.2.29  
+✅ Xdebug 3.3.0  
+✅ pdo_mysql  
+✅ MySQL: 8.0.39  
+🧮 2 + 3 = 5  
 
 ## 🧪 Rodar testes e cobertura
 **Instale dependências (se ainda não fez)**
