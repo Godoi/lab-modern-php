@@ -35,17 +35,17 @@ Após rodar os testes, o relatório é gerado em `build/coverage/`:
 git clone https://github.com/godoi/lab-modern-php.git
 cd lab-modern-php
 
-### Suba o ambiente
+**Suba o ambiente**
 docker-compose up -d --build
 
-### Verifique os serviços
+**Verifique os serviços**
 docker-compose ps
 → nginx-app, php-app, mysql-app devem estar "Up"
 
-### Acesse sua aplicação:
+**Acesse sua aplicação:**
 🔗 http://localhost:8080
 
-## ✅ Saída esperada no navegador:
+**✅ Saída esperada no navegador:**
 ✅ PHP 8.2.29
 ✅ Xdebug 3.3.0
 ✅ pdo_mysql
@@ -53,18 +53,18 @@ docker-compose ps
 🧮 2 + 3 = 5
 
 ## 🧪 Rodar testes e cobertura
-### Instale dependências (se ainda não fez)
+**Instale dependências (se ainda não fez)**
 docker-compose run --rm cli composer install
 
-### Rode testes
+**Rode testes**
 ./bin/test
-### ou
+**ou**
 docker-compose run --rm cli ./vendor/bin/phpunit --testdox
 
-### Gere relatório de cobertura
+**Gere relatório de cobertura**
 ./bin/test --coverage-html build/coverage
 
-### Abra no navegador (WSL2)
+**Abra no navegador (WSL2)**
 explorer.exe build/coverage/index.html
 
 [![CI](https://github.com/godoi/lab-modern-php/actions/workflows/ci.yml/badge.svg)](https://github.com/godoi/lab-modern-php/actions)
