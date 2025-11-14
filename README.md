@@ -18,22 +18,17 @@ Ambiente de desenvolvimento local **totalmente isolado** para aplicações PHP m
 - Prototipagem rápida  
 - Projetos com Laravel, Symfony, Slim, ou PHP puro
 
----
-
 ## 🛠️ Pré-requisitos
 
 - ✅ Windows 10/11 com **WSL2** instalado (Ubuntu 22.04+ recomendado)  
 - ✅ **Docker Desktop** com **integração ao WSL2 habilitada**  
   > 💡 Dica: evite projetos em `/mnt/c/...` — mantenha tudo dentro do WSL (`/home/user/...`) para melhor performance de I/O.
 
----
-
 ## 🖼️ Relatório de cobertura (exemplo)
 
 Após rodar os testes, o relatório é gerado em `build/coverage/`:
 
 ➡️ Você pode gerar o seu com:
-```bash
 ./bin/test --coverage-html build/coverage
 
 ## 🚀 Início Rápido
