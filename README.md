@@ -45,7 +45,7 @@ docker-compose ps
 **Acesse sua aplicação:**
 🔗 http://localhost:8080
 
-**✅ Saída esperada no navegador:**
+**✅ Saída esperada no navegador:**  
 ✅ PHP 8.2.29  
 ✅ Xdebug 3.3.0  
 ✅ pdo_mysql  
