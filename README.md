@@ -41,14 +41,14 @@ Após rodar os testes, o relatório é gerado em `build/coverage/`:
 
 ## 🚀 Início Rápido
 
-**Clonar** 
+**Clonar:**  
 git clone https://github.com/godoi/lab-modern-php.git  
 cd lab-modern-php
 
-**Suba o ambiente**  
+**Suba o ambiente:**  
 docker-compose up -d --build
 
-**Verifique os serviços**  
+**Verifique os serviços:**  
 docker-compose ps
 → nginx-app, php-app, mysql-app devem estar "Up"
 
