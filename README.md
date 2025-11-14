@@ -2,7 +2,8 @@
 
 [![CI](https://github.com/godoi/lab-modern-php/actions/workflows/ci.yml/badge.svg)](https://github.com/godoi/lab-modern-php/actions)
 [![Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](build/coverage/)
-[![codecov](https://codecov.io/github/godoi/lab-modern-php/branch/main/graph/badge.svg?token=9LE4A4DL4J)](https://codecov.io/github/godoi/lab-modern-php)
+[![codecov](https://codecov.io/github/godoi/lab-modern-php/branch/main/graph/badge.svg?token=9LE4A4DL4J)](https://codecov.io/github/godoi/lab-modern-php)  
+
 [![PHP 8.2](https://img.shields.io/badge/PHP-8.2-777BB4?logo=php&logoColor=white)](https://www.php.net)
 [![Xdebug 3.3](https://img.shields.io/badge/Xdebug-3.3-8C34C2?logo=xdebug)](https://xdebug.org)
 [![Nginx](https://img.shields.io/badge/Nginx-1.25+-5EAF4A?logo=nginx&logoColor=white)](https://nginx.org)
@@ -13,7 +14,7 @@
 Ambiente de desenvolvimento local **totalmente isolado** para aplicações PHP modernas, otimizado para **WSL2 + Docker Desktop**.
 
 ✅ Funciona 100% com:  
-- **PHP 8.2-FPM**  
+- **PHP 8.2-FPM**   
 - **Xdebug 3.3** (debug web/CLI + cobertura)  
 - **Nginx**  
 - **MySQL 8.0**  
@@ -39,17 +40,17 @@ Após rodar os testes, o relatório é gerado em `build/coverage/`:
 ./bin/test --coverage-html build/coverage
 
 ## 🚀 Início Rápido
-git clone https://github.com/godoi/lab-modern-php.git
+git clone https://github.com/godoi/lab-modern-php.git  
 cd lab-modern-php
 
-**Suba o ambiente**
+**Suba o ambiente**  
 docker-compose up -d --build
 
-**Verifique os serviços**
+**Verifique os serviços**  
 docker-compose ps
 → nginx-app, php-app, mysql-app devem estar "Up"
 
-**Acesse sua aplicação:**
+**Acesse sua aplicação:**  
 🔗 http://localhost:8080
 
 **✅ Saída esperada no navegador:**  
@@ -60,17 +61,16 @@ docker-compose ps
 🧮 2 + 3 = 5  
 
 ## 🧪 Rodar testes e cobertura
-**Instale dependências (se ainda não fez)**
+**Instale dependências (se ainda não fez)**  
 docker-compose run --rm cli composer install
 
-**Rode testes**
+**Rode testes**  
 ./bin/test
 **ou**
 docker-compose run --rm cli ./vendor/bin/phpunit --testdox
 
-**Gere relatório de cobertura**
+**Gere relatório de cobertura**  
 ./bin/test --coverage-html build/coverage
 
-**Abra no navegador (WSL2)**
+**Abra no navegador (WSL2)**  
 explorer.exe build/coverage/index.html
-
