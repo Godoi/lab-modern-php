@@ -11,6 +11,8 @@
 [![PHPUnit](https://img.shields.io/badge/PHPUnit-10.5-ED4040?logo=phpunit&logoColor=white)](https://phpunit.de)
 [![Composer](https://img.shields.io/badge/Composer-2.7+-8C5A8D?logo=composer&logoColor=white)](https://getcomposer.org)
 
+> 🧪 Este é um **template de projeto**. Use-o como base para novos projetos PHP.
+
 Ambiente de desenvolvimento local **totalmente isolado** para aplicações PHP modernas, otimizado para **WSL2 + Docker Desktop**.
 
 ✅ Funciona 100% com:  
@@ -39,40 +41,74 @@ Após rodar os testes, o relatório é gerado em `build/coverage/`:
 ➡️ Você pode gerar o seu com:
 ./bin/test --coverage-html build/coverage
 
-## 🚀 Início Rápido
+## 🚀 Criar novo projeto a partir deste template
 
-**Clonar:**  
-git clone https://github.com/godoi/lab-modern-php.git  
-cd lab-modern-php
+1. No GitHub, clique em **[Use this template] → Create a new repository**
+2. Dê um nome ao seu novo repo (ex: `meu-app-php`)
+3. Clone seu novo repo:
+   ```bash
+   git clone git@github.com:seu-usuario/meu-app-php.git
+   cd meu-app-php
 
-**Suba o ambiente:**  
-docker-compose up -d --build
+   docker-compose up -d --build
+   docker-compose run --rm cli composer install
 
-**Verifique os serviços:**  
-docker-compose ps
-→ nginx-app, php-app, mysql-app devem estar "Up"
 
-**Acesse sua aplicação:**  
-🔗 http://localhost:8080
 
-**Saída esperada no navegador:**  
-✅ PHP 8.2.29  
-✅ Xdebug 3.3.0  
-✅ pdo_mysql  
-✅ MySQL: 8.0.39  
-🧮 2 + 3 = 5  
+---
 
-## 🧪 Rodar testes e cobertura
-**Instale dependências (se ainda não fez)**  
+## ✅ Etapa 2: Habilitar como *template* no GitHub
+
+1. Acesse: https://github.com/Godoi/lab-modern-php  
+2. Clique em **Settings** → **General**  
+3. Role até **Template repository**  
+4. ✅ Marque a opção: **☑️ Template repository**  
+5. Clique em **Update changes**
+
+➡️ Pronto! Agora qualquer usuário pode clicar em **[Use this template]** e criar um novo repo com todo o ambiente funcional, sem histórico, e sem artefatos.
+
+---
+
+## ✅ Etapa 3 (opcional, mas poderosa): Automatizar personalização inicial
+
+Crie um script `bin/setup-template.sh`:
+
+```bash
+#!/bin/bash
+set -eu
+
+echo "🔧 Inicializando novo projeto PHP a partir do template..."
+
+# 1. Atualizar composer.json
+echo "📦 Defina o nome do pacote (ex: acme/blog):"
+read -p "Nome: " PACKAGE_NAME
+sed -i "s|\"name\": \".*\"|\"name\": \"$PACKAGE_NAME\"|" composer.json
+
+# 2. Gerar .env
+cp .env.example .env
+
+# 3. Instalar dependências
 docker-compose run --rm cli composer install
 
-**Rode testes**  
-./bin/test
-**ou**
-docker-compose run --rm cli ./vendor/bin/phpunit --testdox
+# 4. Limpar exemplos (opcional)
+read -p "Remover exemplos (Calculator.php, tests/CalculatorTest.php)? [y/N]: " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  rm -f src/Calculator.php index.php tests/CalculatorTest.php
+  mkdir -p src tests
+  echo "<?php" > src/Example.php
+  echo "<?php\ndeclare(strict_types=1);\n" > tests/ExampleTest.php
+fi
 
-**Gere relatório de cobertura**  
-./bin/test --coverage-html build/coverage
+echo "✅ Pronto! Seu projeto está configurado."
+echo "🚀 Execute: docker-compose up -d"
 
-**Abra no navegador (WSL2)**  
-explorer.exe build/coverage/index.html
+### 🧰 Setup personalizado (opcional)
+```bash
+./bin/setup-template.sh
+
+[![Template](https://img.shields.io/badge/template-GitHub-555?logo=github)](https://github.com/Godoi/lab-modern-php/generate)
+[![PHP 8.2](https://img.shields.io/badge/PHP-8.2-777BB4?logo=php)](https://www.php.net)
+[![Xdebug 3.3](https://img.shields.io/badge/Xdebug-3.3-8C34C2?logo=xdebug)](https://xdebug.org)
+
+
