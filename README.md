@@ -69,44 +69,6 @@ Após rodar os testes, o relatório é gerado em `build/coverage/`:
 
 ---
 
-## ✅ Etapa 3 (opcional, mas poderosa): Automatizar personalização inicial
-
-Crie um script `bin/setup-template.sh`:
-
-```bash
-#!/bin/bash
-set -eu
-
-echo "🔧 Inicializando novo projeto PHP a partir do template..."
-
-# 1. Atualizar composer.json
-echo "📦 Defina o nome do pacote (ex: acme/blog):"
-read -p "Nome: " PACKAGE_NAME
-sed -i "s|\"name\": \".*\"|\"name\": \"$PACKAGE_NAME\"|" composer.json
-
-# 2. Gerar .env
-cp .env.example .env
-
-# 3. Instalar dependências
-docker-compose run --rm cli composer install
-
-# 4. Limpar exemplos (opcional)
-read -p "Remover exemplos (Calculator.php, tests/CalculatorTest.php)? [y/N]: " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-  rm -f src/Calculator.php index.php tests/CalculatorTest.php
-  mkdir -p src tests
-  echo "<?php" > src/Example.php
-  echo "<?php\ndeclare(strict_types=1);\n" > tests/ExampleTest.php
-fi
-
-echo "✅ Pronto! Seu projeto está configurado."
-echo "🚀 Execute: docker-compose up -d"
-
-### 🧰 Setup personalizado (opcional)
-```bash
-./bin/setup-template.sh
-
 [![Template](https://img.shields.io/badge/template-GitHub-555?logo=github)](https://github.com/Godoi/lab-modern-php/generate)
 [![PHP 8.2](https://img.shields.io/badge/PHP-8.2-777BB4?logo=php)](https://www.php.net)
 [![Xdebug 3.3](https://img.shields.io/badge/Xdebug-3.3-8C34C2?logo=xdebug)](https://xdebug.org)
